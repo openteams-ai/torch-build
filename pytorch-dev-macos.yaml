@@ -27,10 +27,13 @@ dependencies:
   - numpy
   - expecttest
   - hypothesis
+  - lintrunner
   - scipy
   - psutil
   - pytest
   - parameterized
+  - pyrefly
+  - uv
 
   # Development utilities
   - ghstack
