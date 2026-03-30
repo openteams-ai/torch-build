@@ -20,7 +20,7 @@ dependencies:
   - lldb
 
   # CUDA requirements, even if using system CUDA
-  - libmagma-devel
+  - libmagma-devel=2.9.*
   - cuda-driver-dev
   - cuda-version=13.0
   - cudnn
