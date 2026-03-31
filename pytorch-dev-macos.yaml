@@ -16,7 +16,7 @@ dependencies:
   - ninja
   - packaging
   - pyyaml
-  - scikit-build
+  - scikit-build-core
   - setuptools
   - types-dataclasses
   - typing
