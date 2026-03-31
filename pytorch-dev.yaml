@@ -45,7 +45,7 @@ dependencies:
   - ninja
   - packaging
   - pyyaml
-  - scikit-build
+  - scikit-build-core
   - setuptools
   - sysroot_linux-64>=2.17
   - types-dataclasses
