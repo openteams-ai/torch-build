@@ -2,7 +2,6 @@ unset NCORES
 unset MAX_JOBS
 unset CMAKE_BUILD_TYPE
 unset USE_CUDA
-unset TORCH_CUDA_ARCH_LIST
 unset USE_PRECOMPILED_HEADERS
 unset USE_PER_OPERATOR_HEADERS
 unset CCACHE_COMPRESS
@@ -13,9 +12,7 @@ unset USE_FBGEMM                               # GEMMs
 unset BUILD_TEST                               # C++ tests
 unset BUILD_CAFFE2                             # caffe2
 unset BUILD_CAFFE2_OPS                         # caffe2
-unset USE_DISTRIBUTED                          # distributed
-unset USE_NCCL                                 # distributed
-unset USE_GLOO                                 # distributed
+unset USE_SYSTEM_NCCL                          # distributed
 unset USE_QNNPACK                              # quantized
 unset USE_XNNPACK                              # quantized
 unset USE_FLASH_ATTENTION
