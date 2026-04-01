@@ -14,18 +14,10 @@ export CMAKE_BUILD_TYPE=Release
 # but makes the symbol loading phase in gdb and the linking phase in compilation much slower.
 
 # CUDA
-if [[ "$(uname)" == "Darwin" ]]; then
+if ! command -v nvidia-smi >/dev/null 2>&1; then
   export USE_CUDA=0
 else
   export USE_CUDA=1
-fi
-
-if [[ -n "$TORCH_CUDA_ARCH_LIST" ]]; then
-    :
-elif [[ $(hostname) = qgpu* ]]; then
-    export TORCH_CUDA_ARCH_LIST="7.5"  # qgpu server
-else
-    export TORCH_CUDA_ARCH_LIST="8.0"  # A100 architecture
 fi
 
 # Faster recompilation
