@@ -3,27 +3,30 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - python=3.13
+  - python=3.14
   - python-freethreading
   - pip
   - cpython
 
   # Select compiler-version (optional, but recommended)
   # These are pulled in by cuda-nvcc implicitly
-  - gcc=15
-  - gxx=15
+  - gcc<16
+  - gxx<16
   # Add GDB, to bundle in py-bt support.
   - gdb
   # Certain features (like cpp_wrapper for inductor) can be tested in clang as
-  # well.
-  - clang
-  - clangxx
+  # well.  The pipeline currently tests with clang-18.
+  - clang<19
+  - clangxx<19
   - lldb
 
+  # Speedup linking
+  - mold
+
   # CUDA requirements, even if using system CUDA
-  - libmagma-devel=2.9.*
+  - libmagma-devel<2.10
   - cuda-driver-dev
-  - cuda-version=13.0
+  - cuda-version=13.2
   - cudnn
   - conda-gcc-specs # Needed for triton to find libcuda.so
 
@@ -48,7 +51,7 @@ dependencies:
   - pyyaml
   - scikit-build-core
   - setuptools
-  - sysroot_linux-64>=2.17
+  - sysroot_linux-64
   - types-dataclasses
   - typing
   - typing-extensions
@@ -81,7 +84,7 @@ dependencies:
   - dill
   - jinja2
   - lark
-  #- optree
+  - optree
   - tabulate
   - networkx
   - z3-solver
