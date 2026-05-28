@@ -9,5 +9,5 @@ conda env create \
 
 eval "$(conda shell.bash hook)"
 conda activate ${PYTORCH_CONDA_ENV:=pytorch-dev${PYTORCH_BUILD_SUFFIX}}
-echo "source $SCRIPT_DIR/torch-common.sh"             > $CONDA_PREFIX/etc/conda/activate.d/activate-torch.sh
-echo "source $SCRIPT_DIR/deactivate-torch-common.sh"  > $CONDA_PREFIX/etc/conda/deactivate.d/deactivate-torch.sh
+echo "source $SCRIPT_DIR/activate-env.sh"    > $CONDA_PREFIX/etc/conda/activate.d/activate-torch.sh
+echo "source $SCRIPT_DIR/deactivate-env.sh"  > $CONDA_PREFIX/etc/conda/deactivate.d/deactivate-torch.sh
