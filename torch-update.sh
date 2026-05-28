@@ -14,10 +14,10 @@ done
 
 for pkg in ${PKGS[@]}; do
   pushd ${pkg}
-  git fetch origin --prune
+  git fetch origin --prune --jobs=8
   git checkout main
-  git rebase origin/main
-  git submodule update --init --recursive
+  git pull --rebase
+  git submodule update --init --recursive --jobs=8
   popd
 done
 
