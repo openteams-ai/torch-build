@@ -45,7 +45,6 @@ dependencies:
   - fsspec
   - mkl
   - mkl-include
-  - nccl
   - ninja
   - packaging
   - pyyaml
