@@ -7,7 +7,12 @@ dependencies:
   - pip
   - cpython
   - compilers
-  - clang=18
+  - clang<19
+  - clangxx<19
+  - lldb
+
+  # Speedup linking
+  - mold
 
   # PyTorch dependencies
   - ccache
