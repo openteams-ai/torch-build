@@ -12,7 +12,9 @@ pip uninstall torch -y
 pip install -e . --no-build-isolation -v $@
 
 # comment out if you're developing triton as well
-make triton
+if [[ ! $OSTYPE =~ darwin ]]; then
+  make triton
+fi
 
 # leave build directory
 popd
