@@ -14,16 +14,16 @@ dependencies:
   # Add GDB, to bundle in py-bt support.
   - gdb
   # Certain features (like cpp_wrapper for inductor) can be tested in clang as
-  # well.  The pipeline currently tests with clang-18.
-  - clang<19
-  - clangxx<19
+  # well.  nvcc currently supports up to clang 21.
+  - clang<22
+  - clangxx<22
   - lldb
 
   # Speedup linking
   - mold
 
   # CUDA requirements, even if using system CUDA
-  - libmagma-devel<2.10
+  - libmagma-devel
   - cuda-driver-dev
   - cuda-version=13.2
   - cudnn
