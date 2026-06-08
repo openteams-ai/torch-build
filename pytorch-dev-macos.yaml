@@ -6,13 +6,6 @@ dependencies:
   - python=3.10
   - pip
   - cpython
-  - compilers
-  - clang<19
-  - clangxx<19
-  - lldb
-
-  # Speedup linking
-  - mold
 
   # PyTorch dependencies
   - ccache
