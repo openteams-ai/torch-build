@@ -7,12 +7,13 @@ dependencies:
   - pip
   - cpython
   - compilers
-  - clang<19
-  - clangxx<19
+  # We don't have to support nvcc, so get the most modern Clang possible.
+  - clang
+  - clangxx
   - lldb
 
   # Speedup linking
-  - mold
+  - lld
 
   # PyTorch dependencies
   - ccache
