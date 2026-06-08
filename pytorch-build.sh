@@ -7,8 +7,6 @@ eval "$(conda shell.bash hook)"
 conda activate ${PYTORCH_CONDA_ENV:=pytorch-dev$PYTORCH_BUILD_SUFFIX}
 pushd ${PYTORCH_BUILD_DIRECTORY:=~/git$PYTORCH_BUILD_SUFFIX}/pytorch
 
-source $SCRIPT_DIR/torch-common.sh
-
 pwd
 pip uninstall torch -y
 pip install -e . --no-build-isolation -v $@
