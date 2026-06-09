@@ -15,6 +15,11 @@ dependencies:
   # Speedup linking
   - lld
 
+  # Explicitly override BLAS to use MacOS's Accelerate framework.  Without this, Conda
+  # defaults to installing OpenBLAS, which can (in some cases) break detection of
+  # features in Accelerate, which PyTorch preferentially builds against.
+  - libblas=*=*_newaccelerate
+
   # PyTorch dependencies
   - ccache
   - cmake
