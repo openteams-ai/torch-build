@@ -20,7 +20,9 @@ fi
 export USE_ROCM=0
 
 # Faster linking
-if command -v ld.mold >/dev/null 2>&1; then
+if command -v ld.wild >/dev/null 2>&1; then
+  export CMAKE_LINKER_TYPE=WILD
+elif command -v ld.mold >/dev/null 2>&1; then
   export CMAKE_LINKER_TYPE=MOLD
 elif command -v ld.lld >/dev/null 2>&1; then
   export CMAKE_LINKER_TYPE=LLD
@@ -45,9 +47,13 @@ export BUILD_AOT_INDUCTOR_TEST=0 # C++ tests
 export BUILD_TEST=0 # C++ tests
 export USE_PYTORCH_QNNPACK=0 # mobile
 export USE_XNNPACK=0 # mobile
-# Disable these unless you are going to benchmark them
+export USE_ITT=0 # Intel VTune instrumentation
+export USE_CUFILE=0 # GPUDirect Storage, needs the nvidia_fs kernel module
+export BUILD_LAZY_TS_BACKEND=0 # TorchScript lazy tensor backend
+# Disable unless you are going to benchmark it
 export USE_FLASH_ATTENTION=0
-export USE_MEM_EFF_ATTENTION=0
+# The only fused SDPA kernel for GPUs before sm_80
+export USE_MEM_EFF_ATTENTION=1
 
 # cmake from conda
 export CMAKE_PREFIX_PATH=$CONDA_PREFIX

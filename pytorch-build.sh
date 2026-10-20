@@ -8,7 +8,6 @@ conda activate ${PYTORCH_CONDA_ENV:=pytorch-dev$PYTORCH_BUILD_SUFFIX}
 pushd ${PYTORCH_BUILD_DIRECTORY:=~/git$PYTORCH_BUILD_SUFFIX}/pytorch
 
 pwd
-pip uninstall torch -y
 pip install -e . --no-build-isolation -v $@
 
 # comment out if you're developing triton as well

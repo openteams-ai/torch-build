@@ -8,13 +8,11 @@ pushd ${PYTORCH_BUILD_DIRECTORY:=~/git$PYTORCH_BUILD_SUFFIX}
 
 PKGS=(data vision audio)
 for pkg in ${PKGS[@]}; do
-  pip uninstall -y "torch${pkg}"
   pushd "torch-${pkg}"
   pip install . --no-build-isolation -v
   popd
 done
 
-pip uninstall -y torchbenchmark
 pushd torchbenchmark
 python install.py --continue_on_fail
 popd
